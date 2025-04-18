@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #242329;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #ccc;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #6f34fe;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #242329;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #6f34fe;
+}
+
+/* Theme Toggle */
+.toggle-container {
+    display: flex;
+    align-items: center;
+}
+
+.toggle-label {
+    cursor: pointer;
+    font-size: 20px;
+    padding: 8px;
+}
+
+#theme-toggle {
+    display: none;
+}
+
+html:has(#theme-toggle:checked) body {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+html:has(#theme-toggle:checked) nav {
+    background-color: rgba(30, 30, 30, 0.8);
+    border-bottom: 1px solid #444;
+}
+
+html:has(#theme-toggle:checked) nav ul li a,
+html:has(#theme-toggle:checked) .logo {
+    color: #e0e0e0;
+}
+
+/* Main content */
+.content {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.btn {
+    background-color: #6f34fe;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #cdddf3;
+    color: #6f34fe;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    }
+
+    nav ul {
+    flex-direction: column;
+    gap: 10px;
+    }
+
+    .content h1 {
+    font-size: 36px;
+    }
+
+    .btn {
+    font-size: 14px;
+    }
+}
+
+/* الحاوية الخاصة بالأزرار */
+.social-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    background-color: transparent; /* خلفية شفافة */
+    box-shadow: none; /* إزالة الظل */
+}
+
+/* الأزرار في الوضع الفاتح */
+.social-footer .social-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+/* تغيير لون الأزرار عند التمرير عليها */
+.social-footer .social-btn:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+/* اللون الخاص بالأزرار في الوضع الفاتح */
+.social-footer .social-btn:nth-child(1) {
+    background-color: #3b5998; /* اللون الافتراضي لفيسبوك */
+}
+
+.social-footer .social-btn:nth-child(2) {
+    background-color: #25d366; /* اللون الافتراضي لواتساب */
+}
+
+.social-footer .social-btn:nth-child(3) {
+    background-color: #e1306c; /* اللون الافتراضي لإنستغرام */
+}
+
+/* الأزرار في وضع الدارك مود */
+html:has(#theme-toggle:checked) .social-footer .social-btn {
+    background-color: #444; /* الخلفية في الوضع الداكن */
+}
+
+/* الأزرار في الوضع الداكن عند التمرير عليها */
+html:has(#theme-toggle:checked) .social-footer .social-btn:hover {
+    opacity: 1;  /* عند التمرير لا يتغير اللون */
+}
+
+html:has(#theme-toggle:checked) .social-footer .social-btn:nth-child(1) {
+    background-color: #1877f2; /* اللون الخاص بفيسبوك في الوضع الداكن */
+}
+
+html:has(#theme-toggle:checked) .social-footer .social-btn:nth-child(2) {
+    background-color: #25d366; /* اللون الخاص بواتساب في الوضع الداكن */
+}
+
+html:has(#theme-toggle:checked) .social-footer .social-btn:nth-child(3) {
+    background-color: #e1306c; /* اللون الخاص لإنستغرام في الوضع الداكن */
+}
+
+
+audio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40%;
+}
